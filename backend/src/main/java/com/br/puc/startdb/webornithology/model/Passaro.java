@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -18,16 +19,29 @@ public class Passaro {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String nomePortugues;
+    @NotBlank
+    private String nome;
+
+    @NotBlank
     private String nomeLatin;
+
     private String tamanho;
+
+    @NotBlank
     private String genero;
+
+    @NotBlank
     private String corPredominante;
+
+    @NotBlank
     private String familia;
+
     private String habitat;
     private String local;
     private LocalDate data;
     private LocalTime hora;
 
+    //@todo
+    //adição de imagem atrelada aos passaros
 
 }
