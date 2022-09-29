@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebOrnithologyApplication {
+public class WebornithologyApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(WebOrnithologyApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(WebornithologyApplication.class, args);
+	}
 
 }

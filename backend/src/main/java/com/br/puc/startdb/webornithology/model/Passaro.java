@@ -16,7 +16,7 @@ public class Passaro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     private String nomePortugues;
     private String nomeLatin;
