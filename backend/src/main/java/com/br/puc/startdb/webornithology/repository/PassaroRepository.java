@@ -9,5 +9,6 @@ public interface PassaroRepository extends JpaRepository<Passaro, Long> {
 
     Passaro findByNome(String nome);
     Passaro findByNomeLatin(String nomeLatin);
+    Passaro findByFamilia(String familia);
 
 }

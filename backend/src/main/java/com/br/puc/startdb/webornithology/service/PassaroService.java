@@ -36,6 +36,11 @@ public class PassaroService {
         return  repository.findByNomeLatin(name);
     }
 
+    public Passaro findByFamilia(String familia){
+        log.info("Buscando Passaros da familia: {}", familia);
+        return  repository.findByFamilia(familia);
+    }
+
     public Passaro create(Passaro passaro) {
         log.info("Slavando novo Passaro: {}", passaro.getNome());
         return repository.save(passaro);
