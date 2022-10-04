@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -13,22 +15,29 @@ import java.time.LocalTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PassaroRequest {
 
-    @NotBlank
+    @NotNull
+    private String imageUrl;
+
+    @NotBlank(message = "informação necessária")
     private String nome;
-    @NotBlank
+    @NotBlank(message = "informação necessária")
     private String nomeLatin;
-    @NotBlank
+    @NotBlank(message = "informação necessária")
     private String tamanho;
-    @NotBlank
+    @NotBlank(message = "informação necessária")
     private String genero;
-    @NotBlank
+    @NotBlank(message = "informação necessária")
     private String corPredominante;
-    @NotBlank
+    @NotBlank(message = "informação necessária")
     private String familia;
-    @NotBlank
+    @NotBlank(message = "informação necessária")
     private String habitat;
-    @NotBlank
+    @NotBlank(message = "informação necessária")
     private String local;
+
+    @PastOrPresent(message = "data inválida")
     private LocalDate data;
+    @PastOrPresent(message = "hora inválida")
     private LocalTime hora;
+
 }

@@ -20,6 +20,9 @@ public class Passaro {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    //@todo
+    //adição de imagem atrelada aos passaros
+    private String imageUrl;
     private String nome;
     private String nomeLatin;
     private String tamanho;
@@ -31,7 +34,5 @@ public class Passaro {
     private LocalDate data;
     private LocalTime hora;
 
-    //@todo
-    //adição de imagem atrelada aos passaros
 
 }
