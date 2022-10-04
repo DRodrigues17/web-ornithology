@@ -22,17 +22,20 @@ public class WebornithologyApplication {
 	 @Bean
 	  CommandLineRunner run(PassaroRepository repository) {
 		 return args -> {
-			 repository.save(new Passaro(null, "", "Arara-azul-grande",
+			 repository.save(new Passaro(null, "C:\\Users\\dlar-\\Downloads\\blue.jpg",
+					 "Arara-azul-grande",
 					 "Anodorhynchus hyacinthinus", "100 cm", "Anodorhynchus",
 					 "Azul", "Psittacidae", "tropical", "campus da pucRS",
 					 LocalDate.of(2022, 9, 29), LocalTime.of(14, 33)));
 
-			 repository.save(new Passaro(null, "", "Tucano", "Ramphastidae", "61 cm",
+			 repository.save(new Passaro(null, "C:\\Users\\dlar-\\Downloads\\tucano.jpg",
+					 "Tucano", "Ramphastidae", "61 cm",
 					 "Ramphastidae", "Preto", "Ramphastidae",
 					 "matas de galeria, cerrado e capões", "Jardim Botânico de Porto Alegre",
 					 LocalDate.of(2022, 8, 5), LocalTime.of(15, 0)));
 
-			 repository.save(new Passaro(null, "",  "Pica Pau",
+			 repository.save(new Passaro(null, "C:\\Users\\dlar-\\Downloads\\Woodpecker.jpeg",
+					 "Pica Pau",
 					 "Campephilus melanoleucos malherbii", "36 cm", "Picides",
 					 "Preto", "Picidae", "tropical", "Parque Redenção, Porto Alegre",
 					 LocalDate.of(2022, 6, 15), LocalTime.of(16, 45)));

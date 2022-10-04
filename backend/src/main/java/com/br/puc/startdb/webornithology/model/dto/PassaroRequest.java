@@ -16,7 +16,7 @@ import java.time.LocalTime;
 public class PassaroRequest {
 
     @NotNull
-    private String imageUrl;
+    private String codigoImagem;
 
     @NotBlank(message = "informação necessária")
     private String nome;
