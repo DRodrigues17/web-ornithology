@@ -8,10 +8,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.Base64;
 import java.util.Map;
@@ -67,23 +72,28 @@ public class PassaroController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Response> savePassaro(@RequestBody @Valid PassaroRequest passaro, String localImagem) throws Exception {
-        passaro.setCodigoImagem(codificarImagem(localImagem));
+    public ResponseEntity<Response> savePassaro(@RequestBody @Valid PassaroRequest passaro,
+                                                @RequestParam("file ") MultipartFile imagem) {
+        try{
+            if(imagem.isEmpty()){
+                byte[] bytesImagem = imagem.getBytes();
+
+                Path caminho = Paths.get(System.getProperty("user.name") + "Downloads/images/" + passaro.getNome() 
+                        + passaro.getData() + imagem.getOriginalFilename());
+
+                Files.write(caminho, bytesImagem);
+
+                passaro.setNomeImagem(passaro.getNome() + passaro.getData() + imagem.getOriginalFilename());
+            }
+        } catch(IOException e){
+            e.printStackTrace();
+        }
         return ResponseEntity.ok(
                 Response.builder().timestamp(LocalDateTime.now()).data(Map.of("passaro",
                                 service.create(converter.convert(passaro))))
                         .message("Passaro criado")
                         .status(CREATED).statusCode(CREATED.value()).build()
         );
-    }
-
-    private static String codificarImagem(String imgPath) throws  Exception{
-        FileInputStream imageStream = new FileInputStream(imgPath);
-        byte[] data = imageStream.readAllBytes();
-        String imagemCodificada = Base64.getEncoder().encodeToString(data);
-
-        imageStream.close();
-        return imagemCodificada;
     }
 
 

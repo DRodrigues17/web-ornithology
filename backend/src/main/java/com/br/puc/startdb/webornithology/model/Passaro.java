@@ -19,9 +19,7 @@ public class Passaro {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    //@todo
-    //adição de imagem atrelada aos passaros
-    private String codigoImagem;
+    private String nomeImagem;
     private String nome;
     private String nomeLatin;
     private String tamanho;
