@@ -12,7 +12,7 @@ import java.time.LocalTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PassaroResponse {
 
-    private String codigoImagem;
+    private String nomeImagem;
     private String nome;
     private String nomeLatin;
     private String tamanho;

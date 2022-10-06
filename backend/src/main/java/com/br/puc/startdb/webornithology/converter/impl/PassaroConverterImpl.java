@@ -6,13 +6,17 @@ import com.br.puc.startdb.webornithology.model.dto.PassaroRequest;
 import com.br.puc.startdb.webornithology.model.dto.PassaroResponse;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Base64;
+
 @Component
 public class PassaroConverterImpl implements PassaroConverter<Passaro, PassaroResponse, PassaroRequest> {
 
     @Override
     public PassaroResponse convert(Passaro passaro) {
         return PassaroResponse.builder()
-                .codigoImagem(passaro.getCodigoImagem())
+                .nomeImagem(passaro.getNomeImagem())
                 .nome(passaro.getNome())
                 .nomeLatin(passaro.getNomeLatin())
                 .tamanho(passaro.getTamanho())
@@ -28,7 +32,7 @@ public class PassaroConverterImpl implements PassaroConverter<Passaro, PassaroRe
     @Override
     public Passaro convert(PassaroRequest passaro) {
         return Passaro.builder()
-                .codigoImagem(passaro.getCodigoImagem())
+                .nomeImagem(passaro.getNomeImagem())
                 .nome(passaro.getNome())
                 .nomeLatin(passaro.getNomeLatin())
                 .tamanho(passaro.getTamanho())
