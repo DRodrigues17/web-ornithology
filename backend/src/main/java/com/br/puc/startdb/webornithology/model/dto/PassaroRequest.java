@@ -6,9 +6,6 @@ import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Builder
 @Data
@@ -16,10 +13,12 @@ import java.time.LocalTime;
 public class PassaroRequest {
 
     @NotNull
-    private String nomeImagem;
+    private String linkImagem;
 
     @NotBlank(message = "informação necessária")
     private String nome;
+    @NotBlank(message = "informação necessária")
+    private String nomeIngles;
     @NotBlank(message = "informação necessária")
     private String nomeLatin;
     @NotBlank(message = "informação necessária")
@@ -32,12 +31,6 @@ public class PassaroRequest {
     private String familia;
     @NotBlank(message = "informação necessária")
     private String habitat;
-    @NotBlank(message = "informação necessária")
-    private String local;
 
-    @PastOrPresent(message = "data inválida")
-    private LocalDate data;
-    @PastOrPresent(message = "hora inválida")
-    private LocalTime hora;
 
 }

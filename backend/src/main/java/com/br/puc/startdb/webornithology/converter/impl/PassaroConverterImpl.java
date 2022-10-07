@@ -16,32 +16,29 @@ public class PassaroConverterImpl implements PassaroConverter<Passaro, PassaroRe
     @Override
     public PassaroResponse convert(Passaro passaro) {
         return PassaroResponse.builder()
-                .nomeImagem(passaro.getNomeImagem())
+                .linkImagem(passaro.getLinkImagem())
                 .nome(passaro.getNome())
+                .nome(passaro.getNomeIngles())
+                .nomeIngles(passaro.getNomeIngles())
                 .nomeLatin(passaro.getNomeLatin())
                 .tamanho(passaro.getTamanho())
                 .genero(passaro.getGenero())
                 .corPredominante(passaro.getCorPredominante())
                 .familia(passaro.getFamilia())
-                .habitat(passaro.getHabitat())
-                .local(passaro.getLocal())
-                .data(passaro.getData())
-                .hora(passaro.getHora()).build();
+                .habitat(passaro.getHabitat()).build();
     }
 
     @Override
     public Passaro convert(PassaroRequest passaro) {
         return Passaro.builder()
-                .nomeImagem(passaro.getNomeImagem())
+                .linkImagem(passaro.getLinkImagem())
                 .nome(passaro.getNome())
+                .nome(passaro.getNomeIngles())
                 .nomeLatin(passaro.getNomeLatin())
                 .tamanho(passaro.getTamanho())
                 .genero(passaro.getGenero())
                 .corPredominante(passaro.getCorPredominante())
                 .familia(passaro.getFamilia())
-                .habitat(passaro.getHabitat())
-                .local(passaro.getLocal())
-                .data(passaro.getData())
-                .hora(passaro.getHora()).build();
+                .habitat(passaro.getHabitat()).build();
     }
 }
