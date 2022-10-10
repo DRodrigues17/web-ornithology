@@ -14,12 +14,26 @@ public class WebOrnithologyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebOrnithologyApplication.class, args);
 	}
-	
 
 
 	 @Bean
 	  CommandLineRunner run(PassaroRepository repository) {
 		 return args -> {
+			 repository.save(new Passaro(null, "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/arara-azul.jpg",
+					 "Arara-azul-grande", "Blue Arara", "Anodorhynchus hyacinthinus",
+					 "100 cm", "Anodorhynchus", "Azul", "Psittacidae",
+					 "tropical"));
+
+			 repository.save(new Passaro(null, "https://s2.static.brasilescola.uol.com.br/be/2021/12/tucano-toco.jpg",
+					 "Tucano", "Toucan", "Ramphastidae", "61 cm",
+					 "Ramphastidae", "Preto", "Ramphastidae",
+					 "matas de galeria, cerrado e capões"));
+
+			 repository.save(new Passaro(null, "https://upload.wikimedia.org/wikipedia/commons/3/36/Woodpecker_20040529_151837_1c.jpeg",
+					 "Pica Pau", "Woodpecker", "Campephilus melanoleucos malherbii",
+					 "36 cm", "Picides", "Preto", "Picidae", "tropical"));
+
+
 			 repository.save(new Passaro(null, "https://s3.amazonaws.com/media.wikiaves.com.br/images/0721/1270591g_6ab6166e946550bd953a5e271ef70c1e.jpg",
 					 "cabeça-seca", "Wood Stork", "Mycteria americana Linnaeus", "65cm",
 					 "indeterminado", "branco", "Família Ciconiidae",
