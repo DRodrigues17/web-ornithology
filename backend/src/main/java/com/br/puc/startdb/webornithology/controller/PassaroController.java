@@ -44,6 +44,17 @@ public class PassaroController {
                         .status(FOUND).statusCode(FOUND.value()).build()
         );
     }
+
+    @GetMapping("/get/nomeIngles/{nome}")
+    public ResponseEntity<Response> getPassaroByNomeIngles(@PathVariable("nome") String nome){
+        return ResponseEntity.ok(
+                Response.builder().timestamp(LocalDateTime.now()).data(Map.of("nome",
+                                converter.convert(service.findByNameIngles(nome))))
+                        .message("Retornando passaro com respectivo nome em ingles")
+                        .status(FOUND).statusCode(FOUND.value()).build()
+        );
+    }
+
     @GetMapping("/get/nomeLatin/{nomeLatin}")
     public ResponseEntity<Response> getPassaroByNameLatin(@PathVariable("nomeLatin") String nomeLatin){
         return ResponseEntity.ok(

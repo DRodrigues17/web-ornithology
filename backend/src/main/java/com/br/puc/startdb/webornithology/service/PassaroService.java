@@ -31,6 +31,11 @@ public class PassaroService {
         return  repository.findByNome(name);
     }
 
+    public Passaro findByNameIngles(String name){
+        log.info("Buscando Passaro com o nome em Ingles: {}", name);
+        return  repository.findByNomeIngles(name);
+    }
+
     public Passaro findByNameLatin(String name){
         log.info("Buscando Passaro com o nome em Latin: {}", name);
         return  repository.findByNomeLatin(name);
