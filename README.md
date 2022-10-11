@@ -1,8 +1,11 @@
 o Web-Ornithology é uma aplicação criada em Angluar.js e SpringBoot durante o StartDb
 
+acesse a wiki para saber mais sobre a estrutura, recursos e fontes de pesquisa:
+https://gitlab.com/DRodrigues17/web-ornithology/-/wikis/Home
+
 ATenção
 Antes de Rodar a aplicação vá na pasta backend\src\main\resources, 
-abra um terminal e rode o seguinte comando|:
+abra um terminal e rode o seguinte comando:
 > docker-compose up
 
 isso irá habilitar o banco de dados. 
