@@ -1,7 +1,7 @@
 
 spring:
   datasource:
-    password: fcpkgn1702051
+    password: root
     url: jdbc:mysql://localhost:3306/webOrnithology
     username: root
   jpa:

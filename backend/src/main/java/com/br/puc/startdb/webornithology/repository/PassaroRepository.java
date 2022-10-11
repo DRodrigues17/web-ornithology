@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface PassaroRepository extends JpaRepository<Passaro, Long> {
 
     Passaro findByNome(String nome);
+    Passaro findByNomeIngles(String nomeIngles);
     Passaro findByNomeLatin(String nomeLatin);
     Passaro findByFamilia(String familia);
 
