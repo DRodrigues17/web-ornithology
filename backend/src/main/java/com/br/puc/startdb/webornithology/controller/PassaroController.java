@@ -71,7 +71,7 @@ public class PassaroController {
         );
     }
 
-    @PostMapping("/save")
+    /*@PostMapping("/save")
     public ResponseEntity<Response> savePassaro(@RequestBody @Valid PassaroRequest passaro,
                                                 @RequestParam("file ") MultipartFile imagem) {
         try{
@@ -94,7 +94,7 @@ public class PassaroController {
                         .message("Passaro criado")
                         .status(CREATED).statusCode(CREATED.value()).build()
         );
-    }
+    }*/
 
 
 }
