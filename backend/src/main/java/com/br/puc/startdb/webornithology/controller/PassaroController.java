@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static org.springframework.http.HttpStatus.*;
 
@@ -27,7 +28,8 @@ public class PassaroController {
     private final PassaroConverterImpl converter;
 
     @GetMapping("/list")
-    public ResponseEntity<Response> findAll(){
+    public ResponseEntity<Response> findAll() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
 
         return ResponseEntity.ok(
                 Response.builder().timestamp(LocalDateTime.now()).data(Map.of("passaros",
@@ -35,8 +37,9 @@ public class PassaroController {
                         .message("Passaros avistados").status(OK).statusCode(OK.value()).build()
         );
     }
+
     @GetMapping("/get/nome/{nome}")
-    public ResponseEntity<Response> getPassaroByName(@PathVariable("nome") String nome){
+    public ResponseEntity<Response> getPassaroByName(@PathVariable("nome") String nome) {
         return ResponseEntity.ok(
                 Response.builder().timestamp(LocalDateTime.now()).data(Map.of("nome",
                                 converter.convert(service.findByName(nome))))
