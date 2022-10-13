@@ -18,7 +18,6 @@ import java.util.Collection;
 @Slf4j
 public class PassaroService {
 
-    @Autowired
     private final PassaroRepository repository;
 
     public Collection<Passaro> findAll(int limit){
