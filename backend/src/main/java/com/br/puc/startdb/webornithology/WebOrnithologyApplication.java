@@ -75,9 +75,10 @@ public class WebOrnithologyApplication {
 
 		cors.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://localhost:4200"));
 
-		cors.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Typer", "Accept",
-				"Jwt-Token", "Authorization", "Origin, Acept", "X-Requested-With", "Access-Control-Request-Method",
+		cors.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type", "Accept",
+				"Jwt-Token", "Authorization", "Origin, Accept", "X-Requested-With", "Access-Control-Request-Method",
 				"Access-Control-Request-Headers"));
+
 		cors.setExposedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Jwt-Token", "Authorization",
 				"Access-Control-Allow-Origin", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials", "Filename"));
 
