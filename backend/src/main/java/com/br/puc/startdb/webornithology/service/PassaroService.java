@@ -47,7 +47,7 @@ public class PassaroService {
     }
 
     public Passaro create(Passaro passaro) {
-        log.info("Slavando novo Passaro: {}", passaro.getNome());
+        log.info("Salvando novo Passaro: {}", passaro.getNome());
         return repository.save(passaro);
     }
 }

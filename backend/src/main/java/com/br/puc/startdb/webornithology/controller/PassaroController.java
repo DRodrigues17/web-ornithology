@@ -18,6 +18,7 @@ import static org.springframework.http.HttpStatus.*;
 
 
 @RestController
+@CrossOrigin(exposedHeaders = "erros, content-type")
 @RequestMapping("v1/passaro")
 @RequiredArgsConstructor
 public class PassaroController {
