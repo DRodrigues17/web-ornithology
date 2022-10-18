@@ -1,4 +1,4 @@
-export interface Passaro{
+export interface Passaro {
     linkImagem: string;
     nome: string;
     nomeIngles: string;
@@ -7,5 +7,5 @@ export interface Passaro{
     genero: string;
     corPredominante: string;
     familia: string;
-    habitat: string;    
+    habitat: string;
 }
