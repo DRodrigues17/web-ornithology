@@ -17,41 +17,32 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 
 @ExtendWith(MockitoExtension.class)
-public class PassaroServiceTest {
+class PassaroServiceTest {
 
-    // Classe que vai ser testada
     @InjectMocks
     public PassaroService passaroService;
 
-    // Classe que chama o banco e que vai ser simulada
     @Mock
     public PassaroRepository passaroRepository;
 
     @Test
-    public void findAllTest() {
-        // Definições de respostas
+    void findAllTest() {
         List<Passaro> resposta = List.of(new Passaro());
 
-        // Simular as chamadas do banco
         Mockito.when(passaroRepository.findAll((Sort) any())).thenReturn(resposta);
 
-        // Chamar a classe
         Assertions.assertNotNull(passaroService.findAll(1));
     }
 
     @Test
-    public void findByNameTest() {
-        // Definição de resposta
+    void findByNameTest() {
         Passaro passaro = new Passaro();
         passaro.setNome("arroz");
 
-        // Simular as chamadas do banco
         Mockito.when(passaroRepository.findByNome(anyString())).thenReturn(passaro);
 
-        // Chamando a classe
         Passaro resposta = passaroService.findByName("arroz");
 
-        // Testando resposta
         Assertions.assertNotNull(resposta);
         Assertions.assertEquals("arroz", resposta.getNome());
     }

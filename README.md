@@ -9,8 +9,7 @@ Atenção
 
 caso você pretenda rodar essa aplicação na sua maquina, você precisara de um jdk (recomendamos o 17),
 uma IDE que compile código java (recomendamos o Intellij, pois com ele você pode até instalar o jdk se não tiver instalado),
-docker e o node instalado.
-
+docker e o node e angular instalado.
 
 Antes de Rodar a aplicação vá na pasta backend\src\main\resources, 
 abra um terminal e rode o seguinte comando:

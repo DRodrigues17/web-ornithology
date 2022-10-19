@@ -40,7 +40,6 @@ public class WebOrnithologyApplication {
 					"Pica Pau", "Woodpecker", "Campephilus melanoleucos malherbii",
 					"36 cm", "Picides", "Preto", "Picidae", "tropical"));
 
-
 			repository.save(new Passaro(null, "https://s3.amazonaws.com/media.wikiaves.com.br/images/0721/1270591g_6ab6166e946550bd953a5e271ef70c1e.jpg",
 					"cabeça-seca", "Wood Stork", "Mycteria americana Linnaeus", "65cm",
 					"indeterminado", "branco", "Família Ciconiidae",
@@ -73,7 +72,7 @@ public class WebOrnithologyApplication {
 
 		cors.setAllowCredentials(true);
 
-		cors.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://localhost:4200"));
+		cors.setAllowedOrigins(Arrays.asList("http://localhost:8080", "http://localhost:3000", "http://localhost:4200"));
 
 		cors.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type", "Accept",
 				"Jwt-Token", "Authorization", "Origin, Accept", "X-Requested-With", "Access-Control-Request-Method",
