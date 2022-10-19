@@ -18,7 +18,6 @@ import static org.springframework.http.HttpStatus.*;
 
 
 @RestController
-@CrossOrigin(exposedHeaders = "erros, content-type")
 @RequestMapping("v1/passaro")
 @RequiredArgsConstructor
 public class PassaroController {
@@ -79,8 +78,8 @@ public class PassaroController {
         );
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<Response> savePassaro(@RequestBody @Valid PassaroRequest passaro) {
+    @PostMapping("/create")
+    public ResponseEntity<Response> createPassaro(@RequestBody @Valid PassaroRequest passaro) {
         return ResponseEntity.ok(
                 Response.builder().timestamp(LocalDateTime.now()).data(Map.of("passaro",
                                 service.create(converter.convert(passaro))))

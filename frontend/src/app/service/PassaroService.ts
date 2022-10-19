@@ -48,8 +48,8 @@ export class PassaroService {
         catchError(this.handleError)
       )
 
-  save$ = (passaro: Passaro) => <Observable<CustomResponse>>
-    this.http.post<CustomResponse>(`${this.apiUrl}/save`, passaro)
+  create$ = (passaro: Passaro) => <Observable<CustomResponse>>
+    this.http.post<CustomResponse>(`${this.apiUrl}/create`, passaro)
       .pipe(
         tap(console.log),
         catchError(this.handleError)
