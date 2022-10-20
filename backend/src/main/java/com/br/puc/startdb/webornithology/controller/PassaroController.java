@@ -1,5 +1,6 @@
 package com.br.puc.startdb.webornithology.controller;
 
+
 import com.br.puc.startdb.webornithology.converter.impl.PassaroConverterImpl;
 import com.br.puc.startdb.webornithology.model.Response;
 import com.br.puc.startdb.webornithology.model.dto.PassaroRequest;
@@ -9,25 +10,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static org.springframework.http.HttpStatus.*;
 
 
+//@CrossOrigin(exposedHeaders = "erros, content-type")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("v1/passaro")
 @RequiredArgsConstructor
 public class PassaroController {
 
     @Autowired
     private final PassaroService service;
+
     @Autowired
     private final PassaroConverterImpl converter;
 
     @GetMapping("/list")
-    public ResponseEntity<Response> findAll(){
+    public ResponseEntity<Response> findAll() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
 
         return ResponseEntity.ok(
                 Response.builder().timestamp(LocalDateTime.now()).data(Map.of("passaros",
@@ -35,8 +48,9 @@ public class PassaroController {
                         .message("Passaros avistados").status(OK).statusCode(OK.value()).build()
         );
     }
+
     @GetMapping("/get/nome/{nome}")
-    public ResponseEntity<Response> getPassaroByName(@PathVariable("nome") String nome){
+    public ResponseEntity<Response> getPassaroByName(@PathVariable("nome") String nome) {
         return ResponseEntity.ok(
                 Response.builder().timestamp(LocalDateTime.now()).data(Map.of("nome",
                                 converter.convert(service.findByName(nome))))

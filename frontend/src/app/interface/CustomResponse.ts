@@ -1,11 +1,11 @@
 import { Passaro } from "./Passaro";
 
-export interface CustomResponse{
+export interface CustomResponse {
     timeStamp: Date;
     statusCode: number;
-    status:string;
+    status: string;
     reason: string;
     message: string;
     developerMessage: string;
-    data: {passaros?: Passaro[], passaro?: Passaro};
+    data: { passaros?: Passaro[], passaro?: Passaro };
 }
