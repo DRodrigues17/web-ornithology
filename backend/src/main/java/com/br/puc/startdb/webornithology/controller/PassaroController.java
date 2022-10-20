@@ -17,7 +17,9 @@ import java.util.concurrent.TimeUnit;
 import static org.springframework.http.HttpStatus.*;
 
 
+//@CrossOrigin(exposedHeaders = "erros, content-type")
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("v1/passaro")
 @RequiredArgsConstructor
 public class PassaroController {

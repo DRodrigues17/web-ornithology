@@ -65,26 +65,4 @@ public class WebOrnithologyApplication {
 		};
 	}
 
-	@Bean
-	public CorsFilter corsFilter() {
-		UrlBasedCorsConfigurationSource configuration = new UrlBasedCorsConfigurationSource();
-		CorsConfiguration cors = new CorsConfiguration();
-
-		cors.setAllowCredentials(true);
-
-		cors.setAllowedOrigins(Arrays.asList("http://localhost:8080", "http://localhost:3000", "http://localhost:4200"));
-
-		cors.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type", "Accept",
-				"Jwt-Token", "Authorization", "Origin, Accept", "X-Requested-With", "Access-Control-Request-Method",
-				"Access-Control-Request-Headers"));
-
-		cors.setExposedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Jwt-Token", "Authorization",
-				"Access-Control-Allow-Origin", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials", "Filename"));
-
-		cors.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-
-		configuration.registerCorsConfiguration("/**", cors);
-
-		return new CorsFilter();
-	}
 }
