@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --amarelas: #F2EB67;
+    --background: #76BA1B;
+  }
+
+.nav{
+    width: 1920px;
+    height: 108px;
+    color: var(--amarelas);
+    background-color: var(--background);
+    
+}
+ .nav-words{
+    width: 151px;
+    height: 22px;
+    font-family: 'Inria Serif';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+ }
