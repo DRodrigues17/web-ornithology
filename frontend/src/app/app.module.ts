@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { TelaPassaroComponent } from './Components/tela-passaro/tela-passaro.component';
+import { TelaPostagemComponent } from './Components/tela-postagem/tela-postagem.component';
+import { TelaListagemComponent } from './Components/tela-listagem/tela-listagem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    TelaPassaroComponent
+    TelaPassaroComponent,
+    TelaPostagemComponent,
+    TelaListagemComponent
   ],
   imports: [
     BrowserModule,
