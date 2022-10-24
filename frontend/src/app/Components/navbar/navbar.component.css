@@ -1,0 +1,34 @@
+.nav-container{
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+}
+.site-name{
+    display: flex;
+    right: 50px;
+    bottom: 8px;
+    position: relative;
+}
+.div-botoes{
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    top: 50%;
+    left: 80%;
+    justify-content: space-around;
+    position: relative;
+    
+}
+.botoes-pesquisa{
+    background-color: #558516;
+    width: 90px;
+    height: 45px;
+    border-radius: 10px;
+    transition: 1s;
+}
+.botoes-pesquisa:hover{
+    color: #fdf100;
+    background-color: #71a829;
+    width: 100px;
+    height: 55px;
+}
