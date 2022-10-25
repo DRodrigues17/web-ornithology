@@ -1,14 +1,36 @@
 <app-navbar></app-navbar>
-    <h1>Passe as informações do passaro que você quer cadastrar</h1>
-    <input type="text" placeholder="url da imagem">
-    <input type="text" placeholder="nome">
-    <input type="text" placeholder="nome em Ingles">
-    <input type="text" placeholder="nome em Latin">
-    <input type="text" placeholder="tamanho">
-    <input type="text" placeholder="genero">
-    <input type="text" placeholder="cor predominante">
-    <input type="text" placeholder="familia">
-    <input type="text" placeholder="habiitat">
-    <button>cadastrar</button>
-    <button>cancelar</button>
+    <div class="app-words absolute div-instrucoes">
+        <h5>
+            <p>
+                Passe as informações do passaro que você quer cadastrar o passaro,é importante 
+                passar todas as informações, cuide para passar os daddos corretmente, conforme 
+                oque você pesquisou, no momento não recebemos imagens no nosso servidor, então
+                passe a url dela, considerando que você a slavou em algum sistema de nuvem, 
+                como google drive ou mega.
+            </p>
+            <p>
+                Após isso, clique no botão "cadastrar" para inserir ele no nosso banco de dados. 
+            </p> 
+            <p>
+                Caso não queira mais cadastrar o passaro, é só clicar em "cancelar" e você volta 
+                para a página principal.
+            </p> 
+        </h5>
+    </div>
+
+    <div class="app-words absolute input-container">
+        <input class="inputs" type="text" placeholder="url da imagem">
+        <input class="inputs" type="text" placeholder="nome">
+        <input class="inputs" type="text" placeholder="nome em Inglês">
+        <input class="inputs" type="text" placeholder="nome em Latin">
+        <input class="inputs" type="text" placeholder="tamanho">
+        <input class="inputs" type="text" placeholder="gênero">
+        <input class="inputs" type="text" placeholder="cor predominante">
+        <input class="inputs" type="text" placeholder="familia">
+        <input class="inputs" type="text" placeholder="habiitat">
+    </div>
+    <div class="app-words absolute button-container">
+        <button class="botoes-pesquisa botao-cadastrar" onclick="">cadastrar</button>
+        <button class="botoes-pesquisa botao-cancelar" onclick="">cancelar</button>    
+    </div>
 <app-footer></app-footer>
