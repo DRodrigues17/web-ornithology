@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { TelaListagemComponent } from './Components/tela-listagem/tela-listagem.component';
 import { TelaPesquisaComponent } from './Components/tela-pesquisa/tela-pesquisa.component';
 import { TelaPostagemComponent } from './Components/tela-postagem/tela-postagem.component';
 
 const routes: Routes = [
-    { path:'', component: TelaPesquisaComponent },
+    { path:'', component: AppComponent },
+    { path: 'list', component: TelaListagemComponent},
     { path:'post', component: TelaPostagemComponent },
-    { path:'search', component: TelaPesquisaComponent },
+    { path:'search', component: TelaPesquisaComponent }
 ];
 
 @NgModule({
