@@ -1,34 +1,34 @@
-.nav-container{
-    position: absolute;
-    display: flex;
-    align-items: baseline;
+*{
+    color: white;
+    font-weight: bold;
 }
-.site-name{
-    display: flex;
-    right: 50px;
-    bottom: 8px;
-    position: relative;
+.nav-conteiner{
+    background-color: #76BA1B;
 }
-.div-botoes{
-    width: 300px;
-    display: flex;
-    flex-direction: row;
-    top: 50%;
-    left: 75%;
-    justify-content: space-between;
-    position: relative;
-    
+.nav-box{
+
+    width: 75vw;
+    margin: 0 auto;
+    text-align: center ;
 }
-.botoes-pesquisa{
-    background-color: #558516;
-    width: 90px;
-    height: 45px;
-    border-radius: 10px;
-    transition: 1s;
+.logo{
+    margin: 10px;
+    display: inline-block;
 }
-.botoes-pesquisa:hover{
-    color: #fdf100;
-    background-color: #71a829;
-    width: 100px;
-    height: 55px;
+.logo img, h1{
+    display: inline-block;
+    color: white;
+    font: bold;
+}
+.logo img{
+    width: 70px;
+}
+
+.div-menu{
+    display: inline-block;
+}
+
+.div-menu li{
+    display: inline-block;
+    margin: 0 10px;
 }
