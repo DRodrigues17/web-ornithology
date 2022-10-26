@@ -3,10 +3,9 @@
     font-weight: bold;
 }
 .nav-conteiner{
-    background-color: #76BA1B;
+    background-color: var(--background);
 }
-.nav-box{
-
+.nav-box{   
     width: 75vw;
     margin: 0 auto;
     text-align: center ;
@@ -16,18 +15,21 @@
     display: inline-block;
 }
 .logo img, h1{
-    display: inline-block;
+    display: block;
     color: white;
     font: bold;
 }
 .logo img{
     width: 70px;
+    
 }
-
+.logo h1{
+    color: var(--amarelas);
+    margin: -15px 0 0 10px ; 
+}
 .div-menu{
     display: inline-block;
 }
-
 .div-menu li{
     display: inline-block;
     margin: 0 10px;
