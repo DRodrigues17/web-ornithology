@@ -10,6 +10,7 @@ import { TelaPassaroComponent } from './Components/tela-passaro/tela-passaro.com
 import { TelaPostagemComponent } from './Components/tela-postagem/tela-postagem.component';
 import { TelaListagemComponent } from './Components/tela-listagem/tela-listagem.component';
 import { TelaPesquisaComponent } from './Components/tela-pesquisa/tela-pesquisa.component';
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TelaPesquisaComponent } from './Components/tela-pesquisa/tela-pesquisa.
     TelaPassaroComponent,
     TelaPostagemComponent,
     TelaListagemComponent,
-    TelaPesquisaComponent
+    TelaPesquisaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
