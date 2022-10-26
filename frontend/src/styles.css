@@ -8,6 +8,11 @@
     --background: #76BA1B;
   }
 
+.colors-default{
+    color: var(--amarelas);
+    background-color: var(--background);
+}
+
 .main-collors{
     width: 100%;
     height: 108px;
