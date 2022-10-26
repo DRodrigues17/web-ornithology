@@ -5,8 +5,9 @@ import { TelaPesquisaComponent } from './Components/tela-pesquisa/tela-pesquisa.
 import { TelaPostagemComponent } from './Components/tela-postagem/tela-postagem.component';
 
 const routes: Routes = [
-    { path:'', component: AppComponent },
+    { path:'', component: TelaPesquisaComponent },
     { path:'post', component: TelaPostagemComponent },
+    { path:'search', component: TelaPesquisaComponent },
 ];
 
 @NgModule({
