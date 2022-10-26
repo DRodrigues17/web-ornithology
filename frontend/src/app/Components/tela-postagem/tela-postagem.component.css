@@ -1,6 +1,6 @@
 
 .div-instrucoes{
-    width: 600px;
+    width: 40%;
     height: 350px;    
     top: 20%;
     right: 55%;
@@ -9,7 +9,7 @@
 }
 
 .input-container{
-    width: 600px;
+    width: 40%;
     height: 350px;
     top:20%;
     left: 55%;
