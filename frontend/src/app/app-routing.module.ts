@@ -7,7 +7,7 @@ import { TelaPesquisaComponent } from './Components/tela-pesquisa/tela-pesquisa.
 import { TelaPostagemComponent } from './Components/tela-postagem/tela-postagem.component';
 
 const routes: Routes = [
-    { path:'', component: HomeComponent },
+    { path:'home', component: HomeComponent },
     { path:'list', component: TelaListagemComponent},
     { path:'post', component: TelaPostagemComponent },
     { path:'search', component: TelaPesquisaComponent }

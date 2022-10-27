@@ -1,11 +1,11 @@
 
-.conteiner-home{
+.container-home{
     padding: 50px 0;
     text-align: center;
     width: 60vw;
     margin: 0 auto;
 }
-.conteiner-home h2{
+.container-home h2{
     margin-top: 30px;
 }
 .actions{
@@ -14,10 +14,8 @@
 .actions button{
     display: block;
     margin: 5px auto;
-    color: white;
+    color: var(--amarelas);
     background-color: var(--background);
     padding: 5px 25px;
     border-radius: 15px;
-    
-
 }
