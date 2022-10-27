@@ -1,0 +1,22 @@
+*{
+  text-align: center;
+}
+.conteiner{
+  width: 82vw;
+  margin: 50px auto 50px;
+  display: flex;
+  flex-direction: row;
+}
+.right-box,.left-box{
+  width: 40vw;
+}
+.left-box{
+  margin-right: 1vw;
+}
+.right-box{
+  margin-left: 1vw;
+  border: 3px solid #558516;
+  border-radius: 10px;
+  padding: 20px 0;
+}
+
