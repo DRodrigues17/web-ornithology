@@ -1,6 +1,5 @@
 package com.br.puc.startdb.webornithology.controller;
 
-
 import com.br.puc.startdb.webornithology.converter.impl.PassaroConverterImpl;
 import com.br.puc.startdb.webornithology.model.Response;
 import com.br.puc.startdb.webornithology.model.dto.PassaroRequest;
@@ -9,12 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.concurrent.atomic.AtomicLong;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
@@ -25,7 +18,6 @@ import static org.springframework.http.HttpStatus.*;
 
 
 //@CrossOrigin(exposedHeaders = "erros, content-type")
-//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("v1/passaro")
@@ -34,7 +26,6 @@ public class PassaroController {
 
     @Autowired
     private final PassaroService service;
-
     @Autowired
     private final PassaroConverterImpl converter;
 
@@ -89,8 +80,8 @@ public class PassaroController {
         );
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<Response> savePassaro(@RequestBody @Valid PassaroRequest passaro) {
+    @PostMapping("/create")
+    public ResponseEntity<Response> createPassaro(@RequestBody @Valid PassaroRequest passaro) {
         return ResponseEntity.ok(
                 Response.builder().timestamp(LocalDateTime.now()).data(Map.of("passaro",
                                 service.create(converter.convert(passaro))))
