@@ -12,7 +12,7 @@ const routes: Routes = [
     { path:'list', component: TelaListagemComponent},
     { path:'post', component: TelaPostagemComponent },
     { path:'search', component: TelaPesquisaComponent },
-    { path:'get', component: TelaPassaroComponent }
+    { path:'get/{nome}', component: TelaPassaroComponent }
 ];
 
 @NgModule({

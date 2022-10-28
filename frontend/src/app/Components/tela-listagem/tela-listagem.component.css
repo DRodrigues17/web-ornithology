@@ -1,10 +1,7 @@
 .content {
-    display: grid;
-    grid-row: 4;
-    grid-template-rows: max-content;
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: space-between;
   }
   
 .passaro-container{

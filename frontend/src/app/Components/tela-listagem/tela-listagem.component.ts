@@ -10,6 +10,7 @@ import { PassaroService } from 'src/app/service/PassaroService';
 export class TelaListagemComponent implements OnInit {
 
   passaros!: Passaro[];
+  passaro!: Passaro;
 
   constructor(
     public passaroService: PassaroService
@@ -23,5 +24,11 @@ export class TelaListagemComponent implements OnInit {
    this.passaroService.passaros$.subscribe( data => {
     this.passaros = data.data.passaros!;
    });
+  }
+
+  
+
+  redirecionarPagina(){
+    
   }
 }
