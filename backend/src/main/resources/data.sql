@@ -1,5 +1,5 @@
-DROP DATABASE webOrnithology;
-
-CREATE DATABASE webOrnithology;
-
-USE webOrnithology;
+-- DROP DATABASE webOrnithology;
+--
+-- CREATE DATABASE webOrnithology;
+--
+-- USE webOrnithology;
