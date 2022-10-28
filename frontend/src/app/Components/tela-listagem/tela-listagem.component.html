@@ -1,4 +1,8 @@
-<div class="passaro">
-    <img src="" alt="foto do passaro">
-    <p class="app-words">nome passaro</p>
-</div>
+<ng-container *ngFor="let passaro of passaros">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="card passaro-container">
+            <img src="{{passaro.linkImagem}}" class= "imagem" alt="foto do passaro">
+            <p class="">{{passaro.nome}}</p>
+        </div>
+    </div>
+</ng-container>

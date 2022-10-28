@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Passaro } from 'src/app/interface/Passaro';
+import { PassaroService } from 'src/app/service/PassaroService';
 
 @Component({
   selector: 'app-tela-listagem',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TelaListagemComponent implements OnInit {
 
-  constructor() { }
+  passaros!: Passaro[];
+  passaro!: Passaro;
+
+  constructor(
+    public passaroService: PassaroService
+  ) { }
 
   ngOnInit(): void {
+    this.getPassaros();
+  }
+  
+  getPassaros(){
+   this.passaroService.passaros$.subscribe( data => {
+    this.passaros = data.data.passaros!;
+   });
   }
 
+  
+
+  redirecionarPagina(){
+    
+  }
 }
