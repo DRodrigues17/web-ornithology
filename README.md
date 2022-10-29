@@ -12,6 +12,9 @@ Caso você pretenda rodar essa aplicação na sua maquina, você precisara das s
 - node;
 - angular instalado;
 
+Tendo os requerimentos acima, você terá que clonar o projeto, perceba que na página tem um botão azul escrito clone, clique nele e verá diversas opções de clonagem, escolha a que preferir (é esperado que para seguir esse tutorial você tenha o conhecimento básico de git).
+![Botao de clone](clonagem-repositorio.png)
+
 Para para que o front end do projeto seja executável, será necessário o seguinte comando 
 > npm install @angular/cli 
 
