@@ -11,6 +11,7 @@ import { TelaPostagemComponent } from './Components/tela-postagem/tela-postagem.
 import { TelaListagemComponent } from './Components/tela-listagem/tela-listagem.component';
 import { TelaPesquisaComponent } from './Components/tela-pesquisa/tela-pesquisa.component';
 import { HomeComponent } from './Components/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeComponent } from './Components/home/home.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
