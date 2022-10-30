@@ -21,21 +21,22 @@
     </div>
     <div class="right-box">
         <div class="cadastro-conteiner">
-                <form  class="input-container">
-                    <input class="inputs" id="url" type="text" placeholder="url da imagem">
-                    <input class="inputs" type="text" placeholder="nome">
-                    <input class="inputs" type="text" placeholder="nome em Inglês">
-                    <input class="inputs" type="text" placeholder="nome em Latin">
-                    <input class="inputs" type="text" placeholder="tamanho">
-                    <input class="inputs" type="text" placeholder="gênero">
-                    <input class="inputs" type="text" placeholder="cor predominante">
-                    <input class="inputs" type="text" placeholder="familia">
-                    <input class="inputs" type="text" placeholder="habiitat">
+                <form  class="input-container" [formGroup]="formPassaro" (ngSubmit)="cadastrarPassaro()">
+                    <input class="inputs" type="text" placeholder="link da imagem" formControlName="linkImagem">
+                    <input class="inputs" type="text" placeholder="nome" formControlName="nome">
+                    <input class="inputs" type="text" placeholder="nome em Inglês" formControlName="nomeIngles">
+                    <input class="inputs" type="text" placeholder="nome em Latin" formControlName="nomeLatin">
+                    <input class="inputs" type="text" placeholder="tamanho" formControlName="tamanho">
+                    <input class="inputs" type="text" placeholder="gênero" formControlName="genero">
+                    <input class="inputs" type="text" placeholder="cor predominante" formControlName="corPredominante">
+                    <input class="inputs" type="text" placeholder="familia" formControlName="familia">
+                    <input class="inputs" type="text" placeholder="habitat" formControlName="habitat">
+                    <div class="button-container">
+                        <input type="submit" class="botoes-pesquisa botao-cadastrar" value="cadastrar">
+                        <button class="botoes-pesquisa botao-cancelar" routerLink="/list">cancelar</button>
+                    </div>
                 </form>
-            <div class="button-container">
-                <button class="botoes-pesquisa botao-cadastrar" onclick="realizarCadastro()">cadastrar</button>
-                <button class="botoes-pesquisa botao-cancelar" routerLink="/list">cancelar</button>
-            </div>
+            
         </div>
     </div>
 
