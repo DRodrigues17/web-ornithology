@@ -98,10 +98,22 @@ public class PassaroController {
         );
     }
 
-
+    @DeleteMapping("/del/id/{id}")
+    public ResponseEntity<Response> DeletePassaroByFamilia(@PathVariable("id") long id) {
+        return ResponseEntity.ok(
+                Response.builder().timestamp(LocalDateTime.now()).data(Map.of("id",
+                                converter.convert(service.deleteById(id))))
+                        .message("O passaro selecionado foi deletado")
+                        .status(OK).statusCode(OK.value()).build()
+        );
+    }
 //    @DeleteMapping("/del/nome/{nome}")
-//    public Passaro deletarPassaroPeloNome(@PathVariable (value = "nome") String nome){
-//        passaroRepository.deleteByNome(nome);
+//    public ResponseEntity<Response> DeletePassaroByFamilia(@PathVariable("nome") String nome) {
+//        return ResponseEntity.ok(
+//                Response.builder().timestamp(LocalDateTime.now()).data(Map.of("nome",
+//                                converter.convert(service.findByName(nome))))
+//                        .message("O passaro com selecionado foi deletado")
+//                        .status(OK).statusCode(OK.value()).build()
+//        );
 //    }
-
 }

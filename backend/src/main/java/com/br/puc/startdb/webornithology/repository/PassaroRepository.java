@@ -11,5 +11,6 @@ public interface PassaroRepository extends JpaRepository<Passaro, Long> {
     Passaro findByNomeIngles(String nomeIngles);
     Passaro findByNomeLatin(String nomeLatin);
     Passaro findByFamilia(String familia);
+    Passaro deleteById(long id);
 
 }

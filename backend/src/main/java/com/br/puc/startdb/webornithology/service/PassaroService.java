@@ -49,4 +49,8 @@ public class PassaroService {
         log.info("Salvando novo Passaro: {}", passaro.getNome());
         return repository.save(passaro);
     }
+    public Passaro deleteById(long id){
+        log.info("Deletando Passaro selecionado");
+        return repository.deleteById(id);
+    }
 }
