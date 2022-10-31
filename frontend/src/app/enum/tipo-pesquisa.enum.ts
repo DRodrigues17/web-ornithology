@@ -1,3 +1,3 @@
 export enum TipoPesquisa {
-    NOME = 'NOME', NOME_INGLES = 'NOME_INGLES', NOME_LATIN = 'NOME_LATIN', FAMILIA = 'FAMILIA'
+    NOME = 1, NOME_INGLES = 2, NOME_LATIN = 3, FAMILIA = 4
 }

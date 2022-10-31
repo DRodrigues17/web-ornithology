@@ -6,9 +6,9 @@ import com.br.puc.startdb.webornithology.model.dto.PassaroResponse;
 import org.springframework.stereotype.Component;
 
 @Component
-public interface PassaroConverter <M extends Passaro, R extends PassaroResponse, Request extends PassaroRequest>{
+public interface PassaroConverter <T extends Passaro, O extends PassaroResponse, I extends PassaroRequest>{
 
-    R convert(M passaro);
+    O convert(T passaro);
 
-    M convert(Request passaro);
+    T convert(I passaro);
 }

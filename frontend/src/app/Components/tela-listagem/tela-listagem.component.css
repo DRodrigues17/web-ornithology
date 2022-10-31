@@ -15,6 +15,12 @@
     justify-content: center;
     top: 50%;
     bottom: 50%;
+    transition: 1s;
+}
+
+.passaro-container:hover{
+    width: 30vw;
+    height: 50vh;
 }
 
 .imagem{
