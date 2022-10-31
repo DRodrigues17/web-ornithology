@@ -15,7 +15,7 @@ Caso você pretenda rodar essa aplicação na sua maquina, você precisara das s
 Tendo os requerimentos acima, você terá que clonar o projeto, perceba que na página tem um botão azul escrito clone, clique nele e verá diversas opções de clonagem, escolha a que preferir (é esperado que para seguir esse tutorial você tenha o conhecimento básico de git).
 ![Botao de clone](clonagem-repositorio.png)
 
-Para para que o front end do projeto seja executável, será necessário o seguinte comando 
+Para para que o front end do projeto seja executável, será necessário o seguinte comando na pasta frontend
 > npm install @angular/cli 
 
 
@@ -24,7 +24,7 @@ Para para que o front end do projeto seja executável, será necessário o segui
 **Caso for usar o docker,**
 antes de rodar a aplicação vá na pasta backend\src\main\resources, 
 abra um terminal e rode o seguinte comando:
-> docker-compose up
+> docker-compose up --build
 
 isso irá habilitar o banco de dados. 
 

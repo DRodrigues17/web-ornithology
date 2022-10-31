@@ -1,34 +1,29 @@
 <div id="container">
     <h1>Pesquise uma ave!</h1>
     <div class="search-box">
-        <h2>Selecione um metodo de pesquisa</h2>
-        <select name=""  id="" required>
-            <option value="TipoPesquisa.NOME">Nome</option>
-            <option value="TipoPesquisa.FAMILIA">Familia</option>
-            <option value="TipoPesquisa.NOME_LATIN">Nome em latin</option>
-            <option value="TipoPesquisa.NOME_INGLES">Nome em inglês</option>
-        </select>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" class="botoes">Pesquisar</button>
-        </div>
+        <h2>Preencha o campo abaixo com o nome do passaro</h2>
+        <form class="input-group mb-3" [formGroup]="formPesquisa" (ngSubmit)="procurarPassaro()">
+            <input type="text" class="form-control" placeholder="nome do passaro" aria-describedby="button-addon2" formControlName="palavraChave">
+            <input type="submit"class="btn btn-outline-secondary" type="button" id="button-addon2" class="botoes" value="Pesquisar">
+        </form>
     </div>
 
     <div class="list-box">
         <h2>Lista</h2>
-        <img src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/arara-azul.jpg" class="card-img-top" alt="...">
+       <!--<img src="{{passaro.linkImagem}}" class="card-img-top" alt="...">
         <ul class="list-group">
-            <li class="list-group-item">Nome</li>
+            <li class="list-group-item">Nome </li>
             <li class="list-group-item">Familia</li>
             <li class="list-group-item">Nome Latin</li>
             <li class="list-group-item">Nome Inglês</li>
         </ul>
         <ul class="list-group" id="lista_objeto_passaro">
-            <li class="list-group-item">Nome</li>
-            <li class="list-group-item">Familia</li>
-            <li class="list-group-item">Nome Latin</li>
-            <li class="list-group-item">Nome Inglês</li>
-        </ul>  
+            <li class="list-group-item">{{passaro.nome}}</li>
+            <li class="list-group-item">{{passaro.familia}}</li>
+            <li class="list-group-item">{{passaro.nomeIngles}}</li>
+            <li class="list-group-item">{{passaro.nomeLatin}}</li>
+        
+        </ul>-->
     </div>
 
 </div>
