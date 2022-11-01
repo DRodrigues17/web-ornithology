@@ -2,13 +2,12 @@
 spring:
   datasource:
     password: 62442
-    url: jdbc:postgresql://localhost:5432/db-api-webornithology
+    url: jdbc:postgresql://localhost:5432/db-api-webornithology?createDatabaseIfNotExist=true
     username: postgres
   jpa:
     hibernate:
-      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: false
-    show-sql: false
+    show-sql: true
