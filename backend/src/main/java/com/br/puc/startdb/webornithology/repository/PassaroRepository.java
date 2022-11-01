@@ -4,13 +4,11 @@ import com.br.puc.startdb.webornithology.model.Passaro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface PassaroRepository extends JpaRepository<Passaro, Long> {
 
-    Passaro findByNome(String nome);
-    Passaro findByNomeIngles(String nomeIngles);
-    Passaro findByNomeLatin(String nomeLatin);
-    Passaro findByFamilia(String familia);
-    Passaro deleteById(long id);
+    Optional<Passaro> findByNome(String nome);
 
 }

@@ -12,6 +12,7 @@ public class PassaroConverterImpl implements PassaroConverter<Passaro, PassaroRe
     @Override
     public PassaroResponse convert(Passaro passaro) {
         return PassaroResponse.builder()
+                .id(passaro.getId())
                 .linkImagem(passaro.getLinkImagem())
                 .nome(passaro.getNome())
                 .nomeIngles(passaro.getNomeIngles())
