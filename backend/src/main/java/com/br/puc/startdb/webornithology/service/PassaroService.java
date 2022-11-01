@@ -30,27 +30,13 @@ public class PassaroService {
         return  repository.findByNome(name);
     }
 
-    public Passaro findByNameIngles(String name){
-        log.info("Buscando Passaro com o nome em Ingles: {}", name);
-        return  repository.findByNomeIngles(name);
-    }
-
-    public Passaro findByNameLatin(String name){
-        log.info("Buscando Passaro com o nome em Latin: {}", name);
-        return  repository.findByNomeLatin(name);
-    }
-
-    public Passaro findByFamilia(String familia){
-        log.info("Buscando Passaros da familia: {}", familia);
-        return  repository.findByFamilia(familia);
-    }
-
     public Passaro create(Passaro passaro) {
         log.info("Salvando novo Passaro: {}", passaro.getNome());
         return repository.save(passaro);
     }
-    public Passaro deleteById(long id){
+    public boolean deleteById(long id){
         log.info("Deletando Passaro selecionado");
-        return repository.deleteById(id);
+        repository.deleteById(id);
+        return true;
     }
 }

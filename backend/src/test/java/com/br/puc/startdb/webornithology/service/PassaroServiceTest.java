@@ -21,12 +21,11 @@ class PassaroServiceTest {
 
     @InjectMocks
     public PassaroService passaroService;
-
     @Mock
     public PassaroRepository passaroRepository;
 
     @Test
-    void findAllTest() {
+    void deveAcharTodosComSucesso() {
         List<Passaro> resposta = List.of(new Passaro());
 
         Mockito.when(passaroRepository.findAll((Sort) any())).thenReturn(resposta);
@@ -35,7 +34,7 @@ class PassaroServiceTest {
     }
 
     @Test
-    void findByNameTest() {
+    void DeveAcharPeloNomeComSucesso() {
         Passaro passaro = new Passaro();
         passaro.setNome("arroz");
 
