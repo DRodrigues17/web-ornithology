@@ -14,35 +14,39 @@ import org.springframework.data.domain.Sort;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 
 @ExtendWith(MockitoExtension.class)
 class PassaroServiceTest {
 
     @InjectMocks
-    public PassaroService passaroService;
+    public PassaroService service;
     @Mock
-    public PassaroRepository passaroRepository;
+    public PassaroRepository repository;
 
     @Test
     void deveAcharTodosComSucesso() {
         List<Passaro> resposta = List.of(new Passaro());
 
-        Mockito.when(passaroRepository.findAll((Sort) any())).thenReturn(resposta);
+        Mockito.when(repository.findAll((Sort) any())).thenReturn(resposta);
 
-        Assertions.assertNotNull(passaroService.findAll(1));
+        Assertions.assertNotNull(service.findAll(1));
     }
 
     @Test
-    void DeveAcharPeloNomeComSucesso() {
+    void deveAcharPeloNomeComSucesso() {
         Passaro passaro = new Passaro();
-        passaro.setNome("arroz");
+        passaro.setNome("urubu");
 
-        Mockito.when(passaroRepository.findByNome(anyString())).thenReturn(passaro);
+        //Mockito.when(repository.findByNome(anyString())).thenReturn(passaro);
 
-        Passaro resposta = passaroService.findByName("arroz");
+        Passaro resposta = service.findByName("urubu");
 
         Assertions.assertNotNull(resposta);
-        Assertions.assertEquals("arroz", resposta.getNome());
+        Assertions.assertEquals("urubu", resposta.getNome());
+    }
+
+    @Test
+    void deveDarLancarEnxceptionDeNaoEncontradoPoisPassaroNaoExisteNoBanco() {
+
     }
 }
