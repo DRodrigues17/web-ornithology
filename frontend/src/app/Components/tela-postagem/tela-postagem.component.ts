@@ -38,8 +38,16 @@ export class TelaPostagemComponent implements OnInit {
   }
 
 
-  cadastrarPassaro() {
+  cadastrarPassaro(): boolean {
     console.log(this.formPassaro.value);
     this.passaroService.create$(this.formPassaro.value as Passaro).subscribe();
+    return true
   }
+  cadastroFeito(){
+    if(this.cadastrarPassaro()){
+      alert('O seu cadastro foi realizado com sucesso!' + 'Redirecionaremos você para a página de listagem, aguarde e seu passaro aparecerá')
+    }
+    
+  }
+
 }

@@ -1,45 +1,44 @@
-
-
 #container{
     margin: 30px 0;
     text-align: center;
 }
 .search-box{
-    margin-top: 50px;
+    margin: 50px auto 0;
+    width: 80vw;
 }
-select{
-    border-radius: 5px;
-}
+
 .input-group.mb-3{
     margin: 15px auto;
-    width: 35vw;
+    width: 80%;
 }
 button{
     padding: 5px 25;
     background-color: #558516;
     color: white;
     font-weight: bold;
-    border-color: black;
-    border-radius: 8px;
     animation: both;
     transition: 0.5s;
 }
 
 .list-box{
-
-    
-    display: inline-block;
     margin: 50px auto 0 ;
-    width: 35vw;
+    width: 80%;
+}
+.card{
+    margin: 50px auto 0 ;
 }
 
-.list-group{
-    width: 25%;
-    margin: 0 auto;
-    display: inline-block;
+.card-body h4{
+    font-size: 18px;
+    text-align: left;
 }
-
-
-#lista_objeto_passaro{
-    width: 75%;
+.card-title{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.card-subtitle{
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0 5px;
 }

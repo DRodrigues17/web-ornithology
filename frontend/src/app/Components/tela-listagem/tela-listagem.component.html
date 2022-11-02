@@ -1,8 +1,38 @@
-<ng-container *ngFor="let passaro of passaros">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="card passaro-container">
-            <img src="{{passaro.linkImagem}}" class= "imagem" alt="foto do passaro">
-            <p class="">{{passaro.nome}}</p>
-        </div>
+
+<div class="conteiner">
+
+    <div class="passaro-list">
+
+        <ng-container  *ngFor="let passaro of passaros">
+    
+            <div class="card" style="width: 18rem;">
+
+                <img class="card-img-top" src="{{passaro.linkImagem}}" alt="Card image cap">
+
+                <div class="card-body">
+
+                  <h5 class="card-title">{{passaro.nome}}</h5>
+
+                  <h5 class="card-subtitle">Família:</h5>
+                  <h4>>{{passaro.familia}}</h4>
+                  <h5 class="card-subtitle">Habitat:</h5>
+                  <h4>>{{passaro.habitat}}</h4>
+                  <h5 class="card-subtitle">Tamanho:</h5>
+                  <h4>>{{passaro.tamanho}}</h4>
+                  <h5 class="card-subtitle">Genero:</h5>
+                  <h4>>{{passaro.genero}}</h4>
+                  <h5 class="card-subtitle">Cor Predominante:</h5>
+                  <h4>>{{passaro.corPredominante}}</h4>
+
+                  <p class="card-text" style="display: none;">Descrição</p>
+
+                  <a routerLink="../passaroPage/{{passaro.nome}}" class="btn btn-primary">Ir á página</a>
+
+                </div>
+            </div>
+        </ng-container>
+        
     </div>
-</ng-container>
+</div>
+
+

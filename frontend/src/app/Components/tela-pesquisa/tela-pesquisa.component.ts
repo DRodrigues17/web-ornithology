@@ -11,28 +11,33 @@ import { PassaroService } from 'src/app/service/PassaroService';
 })
 export class TelaPesquisaComponent implements OnInit {
   
-  formPesquisa!: FormGroup;
-  passaro!: Passaro;
+  passaro!: any;
+  nome!: string;
+  visibility: boolean = false;
+  alertaError!: string;
 
   constructor(
     public passaroService: PassaroService
   ) { }
 
   ngOnInit(): void {
-    this.createForm("");
+
   }
 
-  createForm(palavra: string){
-    this.formPesquisa = new FormGroup({
-      palavraChave: new FormControl(palavra)
-    })
-  }
 
   procurarPassaro(){
-    console.log('i am a tea pot');
-    this.passaroService.findByName$(this.formPesquisa.value).subscribe(data => {
-    this.passaro = data.data.passaro!;        
-    });   
-  }
+    this.passaroService.findByName$(this.nome).subscribe
+    ((data) => {
+      this.passaro = data.data;       
+      this.visibility = true
 
+    },
+    (error) =>{
+      this.alertaError = 'Não foi encontrado um passaro com o nome: '
+      console.error(error);
+      alert(this.alertaError + this.nome)
+    });   
+
+  }
+ 
 }

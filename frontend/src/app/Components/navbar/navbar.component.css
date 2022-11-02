@@ -5,8 +5,8 @@
 .nav-conteiner{
     background-color: var(--background);
 }
-.nav-box{   
-    width: 75vw;
+.navbar-desktop{   
+    width: 80vw;
     margin: 0 auto;
     text-align: center ;
 }
@@ -33,4 +33,8 @@
 .div-menu li{
     display: inline-block;
     margin: 0 10px;
+}
+
+.navbar-mobile{
+    display: none;
 }

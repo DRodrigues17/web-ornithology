@@ -8,11 +8,11 @@ import { TelaPostagemComponent } from './Components/tela-postagem/tela-postagem.
 import { TelaPassaroComponent } from './Components/tela-passaro/tela-passaro.component';
 
 const routes: Routes = [
-    { path:'home', component: HomeComponent },
+    { path:'', component: HomeComponent },
     { path:'list', component: TelaListagemComponent},
     { path:'post', component: TelaPostagemComponent },
     { path:'search', component: TelaPesquisaComponent },
-    { path:'get/{nome}', component: TelaPassaroComponent }
+    { path:'passaroPage/:nome', component: TelaPassaroComponent }
 ];
 
 @NgModule({

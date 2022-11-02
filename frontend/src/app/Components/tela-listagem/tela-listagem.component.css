@@ -1,29 +1,27 @@
-.content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-.passaro-container{
-    width: 20vw;
-    height: 40vh;
-    border-radius: 50px;
-    background: #D9D9D9;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    top: 50%;
-    bottom: 50%;
-    transition: 1s;
+.conteiner{
+    padding: 2%;    
 }
-
-.passaro-container:hover{
-    width: 30vw;
-    height: 50vh;
+.passaro-list{
+    width: 80vw;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
 }
-
-.imagem{
-    width: 80%;
-    height: 60%;
+.card{
+    display: inline-block;
+    margin: 10px;
+}
+.card-body h4{
+    font-size: 18px;
+    text-align: left;
+}
+.card-title{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.card-subtitle{
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0 5px;
 }
