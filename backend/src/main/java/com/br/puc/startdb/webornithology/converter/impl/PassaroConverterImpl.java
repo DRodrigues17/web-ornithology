@@ -14,7 +14,7 @@ public class PassaroConverterImpl implements PassaroConverter<Passaro, PassaroRe
         return PassaroResponse.builder()
                 .id(passaro.getId())
                 .linkImagem(passaro.getLinkImagem())
-                .nome(passaro.getNome().toLowerCase())
+                .nome(passaro.getNome())
                 .nomeIngles(passaro.getNomeIngles().toLowerCase())
                 .nomeLatin(passaro.getNomeLatin().toLowerCase())
                 .tamanho(passaro.getTamanho().toLowerCase())
@@ -28,7 +28,7 @@ public class PassaroConverterImpl implements PassaroConverter<Passaro, PassaroRe
     public Passaro convert(PassaroRequest passaro) {
         return Passaro.builder()
                 .linkImagem(passaro.getLinkImagem())
-                .nome(passaro.getNome().toLowerCase())
+                .nome(passaro.getNome())
                 .nomeIngles(passaro.getNomeIngles().toLowerCase())
                 .nomeLatin(passaro.getNomeLatin().toLowerCase())
                 .tamanho(passaro.getTamanho().toLowerCase())
