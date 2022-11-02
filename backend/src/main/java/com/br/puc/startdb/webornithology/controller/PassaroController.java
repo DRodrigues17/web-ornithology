@@ -107,13 +107,4 @@ public class PassaroController {
                         .status(OK).statusCode(OK.value()).build()
         );
     }
-//    @DeleteMapping("/del/nome/{nome}")
-//    public ResponseEntity<Response> DeletePassaroByFamilia(@PathVariable("nome") String nome) {
-//        return ResponseEntity.ok(
-//                Response.builder().timestamp(LocalDateTime.now()).data(Map.of("nome",
-//                                converter.convert(service.findByName(nome))))
-//                        .message("O passaro com selecionado foi deletado")
-//                        .status(OK).statusCode(OK.value()).build()
-//        );
-//    }
 }

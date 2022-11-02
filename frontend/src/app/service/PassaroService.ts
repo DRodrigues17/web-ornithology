@@ -10,8 +10,17 @@ export class PassaroService {
 
 
   private readonly apiUrl = 'http://localhost:8080/v1/passaro';
-
+  private nomePaginaPassaro = '';
   constructor(private http: HttpClient) { }
+
+  salvarRedirecionando(nome: string){
+    this.nomePaginaPassaro = nome;
+  }
+
+  PesquisarPorNome(name: string){
+    // console.table(this.http.get<CustomResponse>(`${this.apiUrl}/get/nome/${name}`));
+   return this.http.get<CustomResponse>(`${this.apiUrl}/get/nome/${name}`);
+  }
 
   passaros$ = <Observable<CustomResponse>>
     this.http.get<CustomResponse>(`${this.apiUrl}/list`)

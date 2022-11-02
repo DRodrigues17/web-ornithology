@@ -26,9 +26,4 @@ export class TelaListagemComponent implements OnInit {
    });
   }
 
-  
-
-  redirecionarPagina(){
-    
-  }
 }

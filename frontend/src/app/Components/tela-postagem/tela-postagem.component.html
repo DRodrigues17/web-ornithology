@@ -3,10 +3,10 @@
         <div class="div-instrucoes">
             <h5>
                 <p>
-                    Passe as informações do passaro que você quer cadastrar o passaro,é importante
-                    passar todas as informações, cuide para passar os daddos corretmente, conforme
-                    oque você pesquisou, no momento não recebemos imagens no nosso servidor, então
-                    passe a url dela, considerando que você a slavou em algum sistema de nuvem,
+                    Passe as informações do pássaro que você quer cadastrar, é importante
+                    passar todas as informações, cuide para passar os dados corretamente, conforme
+                    o que você pesquisou, no momento não recebemos imagens no nosso servidor, então
+                    passe a url dela, considerando que você a salvou em algum sistema de nuvem,
                     como google drive ou mega.
                 </p>
                 <p>
@@ -32,8 +32,8 @@
                     <input class="inputs" type="text" placeholder="familia" formControlName="familia">
                     <input class="inputs" type="text" placeholder="habitat" formControlName="habitat">
                     <div class="button-container">
-                        <input type="submit" class="botoes-pesquisa botao-cadastrar" value="cadastrar">
-                        <button class="botoes-pesquisa botao-cancelar" routerLink="/list">cancelar</button>
+                        <input routerLink="../list" (click)="cadastroFeito()" type="submit" class="botoes-pesquisa botao-cadastrar" value="cadastrar">
+                        <button class="botoes-pesquisa botao-cancelar" routerLink="/">cancelar</button>
                     </div>
                 </form>
             

@@ -1,29 +1,44 @@
 <div id="container">
     <h1>Pesquise uma ave!</h1>
     <div class="search-box">
-        <h2>Preencha o campo abaixo com o nome do passaro</h2>
-        <form class="input-group mb-3" [formGroup]="formPesquisa" (ngSubmit)="procurarPassaro()">
-            <input type="text" class="form-control" placeholder="nome do passaro" aria-describedby="button-addon2" formControlName="palavraChave">
-            <input type="submit"class="btn btn-outline-secondary" type="button" id="button-addon2" class="botoes" value="Pesquisar">
-        </form>
+        <h2>Preencha o campo abaixo com o nome do passaro</h2>      
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Nome do Passaro" id="input_search" [(ngModel)]="nome">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" (click)="procurarPassaro()">Pesquisar</button>
+            </div>
+          </div>
     </div>
 
-    <div class="list-box">
-        <h2>Lista</h2>
-       <!--<img src="{{passaro.linkImagem}}" class="card-img-top" alt="...">
-        <ul class="list-group">
-            <li class="list-group-item">Nome </li>
-            <li class="list-group-item">Familia</li>
-            <li class="list-group-item">Nome Latin</li>
-            <li class="list-group-item">Nome Inglês</li>
-        </ul>
-        <ul class="list-group" id="lista_objeto_passaro">
-            <li class="list-group-item">{{passaro.nome}}</li>
-            <li class="list-group-item">{{passaro.familia}}</li>
-            <li class="list-group-item">{{passaro.nomeIngles}}</li>
-            <li class="list-group-item">{{passaro.nomeLatin}}</li>
-        
-        </ul>-->
+    <div *ngIf="visibility" class="list-box">
+        <h2></h2>
+    
+            <div class="card" style="width: 18rem;">
+
+                <img class="card-img-top" src="{{passaro.nome.linkImagem}}" alt="Card image cap">
+
+                <div class="card-body">
+
+                  <h5 class="card-title">{{passaro.nome.nome}}</h5>
+
+                  <h5 class="card-subtitle">Família:</h5>
+                  <h4>>{{passaro.nome.familia}}</h4>
+                  <h5 class="card-subtitle">Habitat:</h5>
+                  <h4>>{{passaro.nome.habitat}}</h4>
+                  <h5 class="card-subtitle">Tamanho:</h5>
+                  <h4>>{{passaro.nome.tamanho}}</h4>
+                  <h5 class="card-subtitle">Genero:</h5>
+                  <h4>>{{passaro.nome.genero}}</h4>
+                  <h5 class="card-subtitle">Cor Predominante:</h5>
+                  <h4>>{{passaro.nome.corPredominante}}</h4>
+
+                  <p class="card-text" style="display: none;">Descrição</p>
+
+                  <a routerLink="../passaroPage/{{passaro.nome.nome}}" class="btn btn-primary">Ir á página</a>
+
+                </div>
+            </div>
+           
     </div>
 
 </div>

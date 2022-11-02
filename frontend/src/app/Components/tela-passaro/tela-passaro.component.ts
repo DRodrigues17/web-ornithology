@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Passaro } from 'src/app/interface/Passaro';
 import { PassaroService } from 'src/app/service/PassaroService';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-tela-passaro',
@@ -9,22 +11,39 @@ import { PassaroService } from 'src/app/service/PassaroService';
 })
 export class TelaPassaroComponent implements OnInit {
 
-  nome!: string;
-  passaro!: Passaro;
-
-  constructor(public passaroService: PassaroService) {
+  passaro!: any;
+  nome: any = '';
+  
+  constructor(public passaroService: PassaroService, private route: ActivatedRoute,
+    ) {
     
    }
 
   ngOnInit(): void {
-    this.buscarPassaro(this.nome);
+    this.getUrlParams();
+    this.procurarPassaro(this.nome.nome)
+    
   }
 
-  buscarPassaro(nome: string){
-    this.passaroService.findByName$(nome).subscribe( data =>{
-      this.passaro = data.data.passaro!;
+  getUrlParams(){
+    console.log('NOME',this.route.params)
+    this.route?.params?.subscribe((params)=> {
+      this.nome = params;
       
+    
     });
+  }
+
+  procurarPassaro(nome: any){
+    this.passaroService.findByName$(nome).subscribe
+    ((data) => {
+      this.passaro = data.data;       
+    },
+    (error) =>{
+      console.error(error);
+      alert("Não foi encontrado um passaro com o nome: "+this.nome)
+    });   
+
   }
 
 }
