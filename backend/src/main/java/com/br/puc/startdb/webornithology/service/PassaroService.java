@@ -31,7 +31,7 @@ public class PassaroService {
 
     public Passaro findByName(String nome) {
         log.info("Buscando Passaro com o nome: {}", nome);
-        return repository.findByNome(nome).orElseThrow(() -> new ObjetoNaoEncontradoException("passaro com o nome" + nome));
+        return repository.findByNome(nome).orElseThrow(() -> new ObjetoNaoEncontradoException("passaro com o nome " + nome));
     }
 
     public Passaro create(Passaro passaro) throws RuntimeException {

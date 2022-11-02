@@ -14,27 +14,27 @@ public class PassaroConverterImpl implements PassaroConverter<Passaro, PassaroRe
         return PassaroResponse.builder()
                 .id(passaro.getId())
                 .linkImagem(passaro.getLinkImagem())
-                .nome(passaro.getNome())
-                .nomeIngles(passaro.getNomeIngles())
-                .nomeLatin(passaro.getNomeLatin())
-                .tamanho(passaro.getTamanho())
-                .genero(passaro.getGenero())
-                .corPredominante(passaro.getCorPredominante())
-                .familia(passaro.getFamilia())
-                .habitat(passaro.getHabitat()).build();
+                .nome(passaro.getNome().toLowerCase())
+                .nomeIngles(passaro.getNomeIngles().toLowerCase())
+                .nomeLatin(passaro.getNomeLatin().toLowerCase())
+                .tamanho(passaro.getTamanho().toLowerCase())
+                .genero(passaro.getGenero().toLowerCase())
+                .corPredominante(passaro.getCorPredominante().toLowerCase())
+                .familia(passaro.getFamilia().toLowerCase())
+                .habitat(passaro.getHabitat().toLowerCase()).build();
     }
 
     @Override
     public Passaro convert(PassaroRequest passaro) {
         return Passaro.builder()
                 .linkImagem(passaro.getLinkImagem())
-                .nome(passaro.getNome())
-                .nomeIngles(passaro.getNomeIngles())
-                .nomeLatin(passaro.getNomeLatin())
-                .tamanho(passaro.getTamanho())
-                .genero(passaro.getGenero())
-                .corPredominante(passaro.getCorPredominante())
-                .familia(passaro.getFamilia())
-                .habitat(passaro.getHabitat()).build();
+                .nome(passaro.getNome().toLowerCase())
+                .nomeIngles(passaro.getNomeIngles().toLowerCase())
+                .nomeLatin(passaro.getNomeLatin().toLowerCase())
+                .tamanho(passaro.getTamanho().toLowerCase())
+                .genero(passaro.getGenero().toLowerCase())
+                .corPredominante(passaro.getCorPredominante().toLowerCase())
+                .familia(passaro.getFamilia().toLowerCase())
+                .habitat(passaro.getHabitat().toLowerCase()).build();
     }
 }
