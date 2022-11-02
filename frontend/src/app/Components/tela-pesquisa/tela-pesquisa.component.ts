@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { TipoPesquisa } from 'src/app/enum/tipo-pesquisa.enum';
 import { Passaro } from 'src/app/interface/Passaro';
 import { PassaroService } from 'src/app/service/PassaroService';
 
@@ -10,7 +9,7 @@ import { PassaroService } from 'src/app/service/PassaroService';
   styleUrls: ['./tela-pesquisa.component.css']
 })
 export class TelaPesquisaComponent implements OnInit {
-  
+
   passaro!: any;
   nome!: string;
   visibility: boolean = false;
@@ -28,7 +27,7 @@ export class TelaPesquisaComponent implements OnInit {
   procurarPassaro(){
     this.passaroService.findByName$(this.nome).subscribe
     ((data) => {
-      this.passaro = data.data;       
+      this.passaro = data.data;
       this.visibility = true
 
     },
@@ -36,8 +35,8 @@ export class TelaPesquisaComponent implements OnInit {
       this.alertaError = 'Não foi encontrado um passaro com o nome: '
       console.error(error);
       alert(this.alertaError + this.nome)
-    });   
+    });
 
   }
- 
+
 }
