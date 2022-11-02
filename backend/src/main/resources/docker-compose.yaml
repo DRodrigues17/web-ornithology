@@ -4,10 +4,10 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTEGRES_USER: postgres
-      POSTEGRES_PASSWORD: 62442
-      POSTEGRES_DB: db-api-webornithology
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 62442
+      POSTGRES_DB: db-api-webornithology
     ports:
       - "5432:5432"
     volumes:
-      - "./data:var/lib/postegresql/data"
+      - "~/data:/var/lib/postgresql/data"

@@ -26,7 +26,7 @@ antes de rodar a aplicação vá na pasta backend\src\main\resources,
 abra um terminal e rode o seguinte comando:
 > docker-compose up --build
 
-isso irá habilitar o banco de dados. 
+isso irá habilitar o banco de dados.
 
 Após isso rode a aplicação normalmente na sua IDE de preferencia e acesse via browser a seguinte url:
 > http://localhost:8080/swagger-ui/index.html

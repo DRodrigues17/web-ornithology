@@ -27,43 +27,30 @@ export class PassaroService {
       .pipe(
         tap(console.log),
         catchError(this.handleError)
-      )
+      );
 
   findByName$ = (name: string) => <Observable<CustomResponse>>
     this.http.get<CustomResponse>(`${this.apiUrl}/get/nome/${name}`)
       .pipe(
         tap(console.log),
         catchError(this.handleError)
-      )
-
-  findByNameIngles$ = (name: string) => <Observable<CustomResponse>>
-    this.http.get<CustomResponse>(`${this.apiUrl}/get/nomeIngles/${name}`)
-      .pipe(
-        tap(console.log),
-        catchError(this.handleError)
-      )
-
-  findByNameLatin$ = (name: string) => <Observable<CustomResponse>>
-    this.http.get<CustomResponse>(`${this.apiUrl}/get/nomeLatin/${name}`)
-      .pipe(
-        tap(console.log),
-        catchError(this.handleError)
-      )
-
-  findByFamilia$ = (name: string) => <Observable<CustomResponse>>
-    this.http.get<CustomResponse>(`${this.apiUrl}/get/familia/${name}`)
-      .pipe(
-        tap(console.log),
-        catchError(this.handleError)
-      )
+      );
 
   create$ = (passaro: Passaro) => <Observable<CustomResponse>>
     this.http.post<CustomResponse>(`${this.apiUrl}/create`, passaro)
       .pipe(
         tap(console.log),
         catchError(this.handleError)
-      )
+      );
 
+  delete$ = (idPassaro: number) => <Observable<CustomResponse>>
+    this.http.delete<CustomResponse>(`${this.apiUrl}/delete/id/${idPassaro}`)
+    .pipe(
+      tap(console.log),
+      catchError(this.handleError)
+    );
+  
+  
   private handleError(error: HttpErrorResponse): Observable<never> {
     console.log(error);
     return throwError(`Ocorreu um erro - codigo do erro: ${error.status}`);

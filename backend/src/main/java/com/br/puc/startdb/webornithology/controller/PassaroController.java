@@ -58,36 +58,6 @@ public class PassaroController {
         );
     }
 
-    @GetMapping("/get/nomeIngles/{nome}")
-    public ResponseEntity<Response> getPassaroByNomeIngles(@PathVariable("nome") String nome){
-        return ResponseEntity.ok(
-                Response.builder().timestamp(LocalDateTime.now()).data(Map.of("nome",
-                                converter.convert(service.findByNameIngles(nome))))
-                        .message("Retornando passaro com respectivo nome em ingles")
-                        .status(FOUND).statusCode(FOUND.value()).build()
-        );
-    }
-
-    @GetMapping("/get/nomeLatin/{nomeLatin}")
-    public ResponseEntity<Response> getPassaroByNameLatin(@PathVariable("nomeLatin") String nomeLatin){
-        return ResponseEntity.ok(
-                Response.builder().timestamp(LocalDateTime.now()).data(Map.of("nomeLatin",
-                                converter.convert(service.findByNameLatin(nomeLatin))))
-                        .message("Retornando passaro com respectivo nome em Latin")
-                        .status(FOUND).statusCode(FOUND.value()).build()
-        );
-    }
-
-    @GetMapping("/get/familia/{familia}")
-    public ResponseEntity<Response> getPassaroByFamilia(@PathVariable("familia") String familia) {
-        return ResponseEntity.ok(
-                Response.builder().timestamp(LocalDateTime.now()).data(Map.of("familia",
-                                converter.convert(service.findByFamilia(familia))))
-                        .message("Retornando passaros da familia digitada")
-                        .status(FOUND).statusCode(FOUND.value()).build()
-        );
-    }
-
     @PostMapping("/create")
     public ResponseEntity<Response> createPassaro(@RequestBody @Valid PassaroRequest passaro) {
         return ResponseEntity.ok(
@@ -98,13 +68,14 @@ public class PassaroController {
         );
     }
 
-    @DeleteMapping("/del/id/{id}")
-    public ResponseEntity<Response> DeletePassaroByFamilia(@PathVariable("id") long id) {
+    @DeleteMapping("/delete/id/{id}")
+    public ResponseEntity<Response> DeletePassaroById(@PathVariable("id") long id) {
         return ResponseEntity.ok(
-                Response.builder().timestamp(LocalDateTime.now()).data(Map.of("id",
-                                converter.convert(service.deleteById(id))))
+                Response.builder()
+                        .timestamp(LocalDateTime.now())
+                        .data(Map.of("deleted", service.deleteById(id)))
                         .message("O passaro selecionado foi deletado")
-                        .status(OK).statusCode(OK.value()).build()
+                        .status(NO_CONTENT).statusCode(NO_CONTENT.value()).build()
         );
     }
 }
